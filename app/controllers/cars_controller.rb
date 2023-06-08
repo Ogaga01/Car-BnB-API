@@ -1,52 +1,46 @@
 class CarsController < ApplicationController
-  before_action :set_car, only: %i[show update destroy]
-
-  # GET /cars
   def index
-    @cars = Car.all
-
-    render json: @cars
+    render json: { cars: Car.all }, status: :ok
   end
 
-  # GET /cars/1
   def show
-    render json: @car
+    @car = Car.find(params[:id])
+    render json: { car: @car }, status: :ok
   end
 
-  # POST /cars
   def create
     @car = Car.new(car_params)
-
     if @car.save
-      render json: @car, status: :created, location: @car
+      render json: { success: 'The car has been created successfully.' }, status: :created
     else
-      render json: @car.errors, status: :unprocessable_entity
+      render json: { error: 'There was an error, please try again!' }, status: :internal_server_error
     end
   end
 
-  # PATCH/PUT /cars/1
-  def update
-    if @car.update(car_params)
-      render json: @car
+  def delete
+    @car = Car.find(params[:id])
+    if @car.destroy!
+      render json: { success: 'The car has been deleted successfully' }, status: :ok
     else
-      render json: @car.errors, status: :unprocessable_entity
+      render json: { error: 'There was an error, please try again!' }, status: :internal_server_error
     end
   end
 
-  # DELETE /cars/1
-  def destroy
-    @car.destroy
+  def reserve
+    @reserved_cars = Reservation.where(date: params[:date]).distinct.pluck(:car_id)
+    @cars = Car.all
+    @cars = @cars.reject { |car| @reserved_cars.include?(car.id) } unless @reserved_cars.empty?
+    render json: { cars: @cars }, status: :ok
+  end
+
+  def user_cars
+    @cars = User.find(params[:user_id]).cars
+    render json: { cars: @cars }, status: :ok
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_car
-    @car = Car.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
   def car_params
-    params.require(:car).permit(:name, :model, :price, :description, :image)
+    params.permit(:user_id, :model, :image, :name, :description :price)
   end
 end
