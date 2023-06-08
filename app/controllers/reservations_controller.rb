@@ -1,52 +1,30 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: %i[show update destroy]
-
-  # GET /reservations
-  def index
-    @reservations = Reservation.all
-
-    render json: @reservations
-  end
-
-  # GET /reservations/1
-  def show
-    render json: @reservation
-  end
-
-  # POST /reservations
   def create
-    @reservation = Reservation.new(reservation_params)
-
-    if @reservation.save
-      render json: @reservation, status: :created, location: @reservation
+    @reserved_cars = Reservation.where(date: params[:date]).distinct.pluck(:car_id)
+    if @reserved_cars.include? params[:car_id].to_i
+      render json: { error: 'This car is reserved on this date, please choose another date.' }, status: :not_acceptable
     else
-      render json: @reservation.errors, status: :unprocessable_entity
+      @reservation = Reservation.new(reservation_params)
+      if @reservation.save
+        render json: { success: 'The reservation has been created successfully.' }, status: :created
+      else
+        render json: { error: 'There was an error, please try again.' }, status: :internal_server_error
+      end
     end
   end
 
-  # PATCH/PUT /reservations/1
-  def update
-    if @reservation.update(reservation_params)
-      render json: @reservation
-    else
-      render json: @reservation.errors, status: :unprocessable_entity
+  def index
+    @reservations = User.find(params[:user_id]).reservations
+    @result = []
+    @reservations.each do |res|
+      @result << { reservation: res, car: Car.find(res.car_id) }
     end
-  end
-
-  # DELETE /reservations/1
-  def destroy
-    @reservation.destroy
+    render json: { reservations: @result }, status: :ok
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_reservation
-    @reservation = Reservation.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
   def reservation_params
-    params.require(:reservation).permit(:date, :city)
+    params.permit(:user_id, :car_id, :city, :date)
   end
 end
