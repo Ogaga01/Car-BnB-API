@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe CarsController, type: :controller do
   before :all do
-    @user = User.create(name: 'Testing', username: 'testing')
+    @user = User.create(name: 'Chi', username: 'chi')
     @car = Car.create(name: 'car', model: 'BMW', description: 'A BMW car', image: 'picture link', price: 250, user_id: @user.id)
   end
 
