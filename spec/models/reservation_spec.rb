@@ -2,8 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Reservation, type: :model do
   before :all do
-    @user = User.create( name: 'Boss', username: 'boss')
-    @car = Car.create(name: 'car', model: 'BMW', description: 'A BMW car', image: 'picture link', price: 2500, user_id: @user.id)
+    @user = User.create(name: 'Boss', username: 'boss')
+    @car = Car.create(name: 'car', model: 'BMW', description: 'A BMW car', image: 'picture link', price: 2500,
+                      user_id: @user.id)
     @reservation = Reservation.new(user_id: @user.id, car_id: @car.id, date: '2022-09-04', city: 'test')
   end
 

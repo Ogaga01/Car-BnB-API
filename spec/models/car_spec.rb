@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Car, type: :model do
   before :each do
     @user = User.create(name: 'Hammad', username: 'hammad')
-    @car = Car.create(name: 'car', model: 'BMW', description: 'A BMW car', image: 'picture link', price: 2500, user_id: @user.id)
+    @car = Car.create(name: 'car', model: 'BMW', description: 'A BMW car', image: 'picture link', price: 2500,
+                      user_id: @user.id)
   end
 
   context 'model validations' do

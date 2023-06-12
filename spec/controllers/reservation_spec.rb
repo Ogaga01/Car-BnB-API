@@ -1,10 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe ReservationsController, type: :controller do
-    before :all do
-        @user = User.create(name: 'Ekene', username: 'ekene')
-        @car = Car.create(name: 'car', model: 'BMW', description: 'A BMW car', image: 'picture link', price: 250, user_id: @user.id)
-      end
+  before :all do
+    @user = User.create(name: 'Ekene', username: 'ekene')
+    @car = Car.create(name: 'car', model: 'BMW', description: 'A BMW car', image: 'picture link', price: 250,
+                      user_id: @user.id)
+  end
 
   describe 'POST create' do
     it 'returns status 201' do
