@@ -10,7 +10,7 @@ RSpec.configure do |config|
         version: 'v1'
       },
       paths: {
-        'api/v1/login/{username}': {
+        '/api/v1/login/{username}': {
           get: {
             tags: ['User'],
             summary: 'Login user',
@@ -31,7 +31,7 @@ RSpec.configure do |config|
             }
           }
         },
-        'api/v1/register': {
+        '/api/v1/register': {
           post: {
             tags: ['User'],
             summary: 'Register user',
@@ -56,18 +56,18 @@ RSpec.configure do |config|
           }
         },
         '/api/v1/reservations': {
-        get: {
-          tags: ['Reservations'],
-          summary: 'Get all reservations',
-          operationId: 'getAllReservations',
-          produces: ['application/json'],
-          responses: {
-            200 => { description: 'OK' },
-            500 => { description: 'Internal Server Error' }
+          get: {
+            tags: ['Reservations'],
+            summary: 'Get all reservations',
+            operationId: 'getAllReservations',
+            produces: ['application/json'],
+            responses: {
+              200 => { description: 'OK' },
+              500 => { description: 'Internal Server Error' }
+            }
           }
-        }
         },
-        'api/v1/car/{car_id}': {
+        '/api/v1/car/{car_id}': {
           get: {
             tags: ['Cars'],
             summary: 'Get car by id',
@@ -88,28 +88,7 @@ RSpec.configure do |config|
             }
           }
         },
-        'api/v1/car/{car_id}': {
-          get: {
-            tags: ['Cars'],
-            summary: 'Get car by id',
-            operationId: 'getCarById',
-            produces: ['application/json'],
-            parameters: [
-              {
-                name: 'car_id',
-                in: 'path',
-                type: 'integer',
-                description: 'ID of car',
-                required: true
-              }
-            ],
-            responses: {
-              200 => { description: 'OK' },
-              500 => { description: 'Internal Server Error' }
-            }
-          }
-        },
-        'api/v1/reserve/cars/{date}': {
+        '/api/v1/reserve/cars/{date}': {
           get: {
             tags: ['Cars'],
             summary: 'Get cars by date',
@@ -127,10 +106,10 @@ RSpec.configure do |config|
             responses: {
               200 => { description: 'OK' },
               500 => { description: 'Internal Server Error' }
-              }
+            }
           }
         },
-        'api/v1/cars/{user_id}': {
+        '/api/v1/cars/{user_id}': {
           get: {
             tags: ['Cars'],
             summary: 'Get cars by user id',
@@ -144,14 +123,14 @@ RSpec.configure do |config|
                 description: 'ID of user',
                 required: true
               }
-            ]
+            ],
             responses: {
               200 => { description: 'OK' },
               500 => { description: 'Internal Server Error' }
             }
           }
         },
-        'api/v1/car': {
+        '/api/v1/car': {
           post: {
             tags: ['Cars'],
             summary: 'Create car',
@@ -164,22 +143,22 @@ RSpec.configure do |config|
                 schema: {
                   type: 'object',
                   properties: {
-                    name: { type: 'string' },
-                    model: { type: 'string' },
-                    year: { type: 'integer' },
-                    price: { type: 'integer' },
-                    user_id: { type: 'integer' }
+                    'name' => { type: 'string' },
+                    'model' => { type: 'string' },
+                    'year' => { type: 'integer' },
+                    'price' => { type: 'float' },
+                    'user_id' => { type: 'integer' }
                   }
                 }
               }
             ],
             responses: {
-              201: { description: 'Created' },
-              500: { description: 'Internal Server Error' }
+              201 => { description: 'Created' },
+              500 => { description: 'Internal Server Error' }
             }
           }
         },
-        'api/v1/reserve': {
+        '/api/v1/reserve': {
           post: {
             tags: ['Reservations'],
             summary: 'Create reservation',
@@ -192,21 +171,21 @@ RSpec.configure do |config|
                 schema: {
                   type: 'object',
                   properties: {
-                    car_id: { type: 'integer' },
-                    user_id: { type: 'integer' },
-                    date: { type: 'string' }
-                    price: { type: 'integer' }
-                    status: { type:'string' }
+                    'car_id' => { type: 'integer' },
+                    'user_id' => { type: 'integer' },
+                    'date' => { type: 'string' },
+                    'price' => { type: 'float' },
+                    'status' => { type: 'string' }
                   }
                 }
               }
             ],
             responses: {
-              201: { description: 'Created' },
-              500: { description: 'Internal Server Error' }
+              201 => { description: 'Created' },
+              500 => { description: 'Internal Server Error' }
             }
           }
-        },
+        }
       }
     }
   }
