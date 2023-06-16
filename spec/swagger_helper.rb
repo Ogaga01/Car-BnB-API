@@ -146,7 +146,7 @@ RSpec.configure do |config|
                     'name' => { type: 'string' },
                     'model' => { type: 'string' },
                     'year' => { type: 'integer' },
-                    'price' => { type: 'float' },
+                    'price' => { type: 'decimal' },
                     'user_id' => { type: 'integer' }
                   }
                 }
@@ -174,7 +174,7 @@ RSpec.configure do |config|
                     'car_id' => { type: 'integer' },
                     'user_id' => { type: 'integer' },
                     'date' => { type: 'string' },
-                    'price' => { type: 'float' },
+                    'price' => { type: 'decimal' },
                     'status' => { type: 'string' }
                   }
                 }

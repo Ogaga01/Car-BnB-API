@@ -208,7 +208,7 @@
                   "type": "integer"
                 },
                 "price": {
-                  "type": "float"
+                  "type": "decimal"
                 },
                 "user_id": {
                   "type": "integer"
@@ -254,7 +254,7 @@
                   "type": "string"
                 },
                 "price": {
-                  "type": "float"
+                  "type": "decimal"
                 },
                 "status": {
                   "type": "string"
