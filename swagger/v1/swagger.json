@@ -208,7 +208,7 @@
                   "type": "integer"
                 },
                 "price": {
-                  "type": "decimal"
+                  "type": "number"
                 },
                 "user_id": {
                   "type": "integer"
@@ -254,7 +254,7 @@
                   "type": "string"
                 },
                 "price": {
-                  "type": "decimal"
+                  "type": "number"
                 },
                 "status": {
                   "type": "string"
