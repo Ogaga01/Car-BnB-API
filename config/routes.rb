@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   mount Rswag::Ui::Engine => '/api-docs'
   mount Rswag::Api::Engine => '/api-docs'
-  
+  get 'users/index'
   get 'api/v1/login/:username', to: 'users#login'
   post 'api/v1/register', to: 'users#register'
   
@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   delete 'api/v1/car/:id', to: 'cars#delete'
   
   get 'api/v1/reservations', to: 'reservations#index'
+  get 'api/v1/reservations/:id', to: 'reservations#show'
   post 'api/v1/reservation', to: 'reservations#create'
 
 end
