@@ -14,12 +14,12 @@ class ReservationsController < ApplicationController
   end
 
   def index
-    @reservations = User.find(params[:user_id]).reservations
-    @result = []
-    @reservations.each do |res|
-      @result << { reservation: res, car: Car.find(res.car_id) }
-    end
-    render json: { reservations: @result }, status: :ok
+    render json: { reservations: Reservation.all }, status: :ok
+  end
+
+  def show
+    @reservations = User.find(params[:id]).reservations
+    render json: { reservations: @reservations }, status: :ok
   end
 
   private
