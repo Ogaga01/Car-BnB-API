@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all.order(:id)
+    render json: @users
+  end
+
   def register
     if User.find_by(username: params[:username].downcase)
       render json: { error: 'Username already exists! please choose another one.' }, status: :not_acceptable
