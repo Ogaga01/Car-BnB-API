@@ -5,25 +5,26 @@ class UsersController < ApplicationController
   end
 
   def register
-    if User.find_by(username: params[:username].downcase)
-      render json: { error: 'Username already exists! please choose another one.' }, status: :not_acceptable
-    else
+    @user = User.find_by(username: params[:username].downcase)
+    if @user.nil?
       @user = User.new(user_params)
       @user.username = @user.username.downcase
       if @user.save
         render json: { user: @user, logged_in: true }, status: :created
       else
-        render json: { error: 'There was an error, please try again!' }, status: :internal_server_error
+        render status: 500, json: { message: 'There was an error, please try again!', status: 403 }
       end
+    else
+      render status: 403, json: { message: 'Username already exists! please choose another one.', status: 403 }
     end
   end
 
   def login
     @user = User.find_by(username: params[:username].downcase)
-    if @user
-      render json: { user: @user, logged_in: true }, status: :ok
+    if @user.nil?
+      render status: 403, json: { message: 'Username is invalid', status: 403 }
     else
-      render json: { error: 'Username is invalid.' }, status: :not_acceptable
+      render json: { user: @user, logged_in: true }, status: :ok
     end
   end
 
