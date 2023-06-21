@@ -10,6 +10,18 @@ RSpec.configure do |config|
         version: 'v1'
       },
       paths: {
+        '/api/v1/users/index': {
+          get: {
+            tags: ['User'],
+            summary: 'Get all users',
+            operationId: 'getAllUsers',
+            produces: ['application/json'],
+            responses: {
+              200 => { description: 'OK' },
+              500 => { description: 'Internal Server Error' }
+            }
+          }
+        },
         '/api/v1/login/{username}': {
           get: {
             tags: ['User'],
@@ -72,6 +84,25 @@ RSpec.configure do |config|
             tags: ['Cars'],
             summary: 'Get car by id',
             operationId: 'getCarById',
+            produces: ['application/json'],
+            parameters: [
+              {
+                name: 'car_id',
+                in: 'path',
+                type: 'integer',
+                description: 'ID of car',
+                required: true
+              }
+            ],
+            responses: {
+              200 => { description: 'OK' },
+              500 => { description: 'Internal Server Error' }
+            }
+          },
+          delete: {
+            tags: ['Cars'],
+            summary: 'Delete car',
+            operationId: 'deleteCar',
             produces: ['application/json'],
             parameters: [
               {
@@ -158,7 +189,7 @@ RSpec.configure do |config|
             }
           }
         },
-        '/api/v1/reserve': {
+        '/api/v1/reservation': {
           post: {
             tags: ['Reservations'],
             summary: 'Create reservation',
@@ -182,6 +213,27 @@ RSpec.configure do |config|
             ],
             responses: {
               201 => { description: 'Created' },
+              500 => { description: 'Internal Server Error' }
+            }
+          }
+        },
+        '/api/v1/reservations/{reservation_id}': {
+          get: {
+            tags: ['Reservations'],
+            summary: 'Get reservation by id',
+            operationId: 'getReservationById',
+            produces: ['application/json'],
+            parameters: [
+              {
+                name: 'reservation_id',
+                in: 'path',
+                type: 'integer',
+                description: 'ID of reservation',
+                required: true
+              }
+            ],
+            responses: {
+              200 => { description: 'OK' },
               500 => { description: 'Internal Server Error' }
             }
           }
