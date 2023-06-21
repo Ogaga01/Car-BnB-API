@@ -51,8 +51,7 @@ After you're finished please remove all the comments and instructions!
 
 <!-- PROJECT DESCRIPTION -->
 
-#  <a name="about-project"></a>
-
+# <a name="about-project"></a>
 
 **[Car-BnB-API]**This is a car dealership app where a person can reserve a car or add a car.
 
@@ -77,7 +76,6 @@ After you're finished please remove all the comments and instructions!
 - Postgresql
 - React(Vite)
   <a name="tech-stack"></a>
-
 
 <details>
   <summary>Client</summary>
@@ -104,16 +102,13 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-
 - **[Home page with images of cars and some details]**
 - **[Details page with an image of a specific car and some details]**
 - **[Reservation page where a user can reserve a car]**
 - **[My reservations page where a user can see all his/her reserved cars]**
 - **[Delete page where a user can delete a car]**
 
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -131,10 +126,13 @@ To get a local copy up and running follow these simple example steps.
 
 To setup the project locally: clone the repository using:
 
-```
+````
 https://github.com/Ogaga01/Car-BnB-API.git```
 
 ### Install
+run: `rails db:create`
+
+run: `rails db:migrate`
 
 run: `rails server`
 
@@ -148,14 +146,17 @@ run: rspec
 
 ### API
 - to get a list of cars and their details
-- to add users 
+- to add users
 - to add reservations
 ```sh
  http://127.0.0.1:3000/api/v1/car
 
-```
+````
+
 ### Frontend
+
 to get random greetings from the frontend follow the follwing steps:
+
 ```sh
  git clone https://github.com/Ogaga01/Car-BnB-API.git
  cd Car-BnB-API
@@ -169,13 +170,13 @@ to get random greetings from the frontend follow the follwing steps:
 
 👤 **Felix Sowah**
 
--  GitHub: [@Felix Sowah](https://github.com/Lancelot-SO)
+- GitHub: [@Felix Sowah](https://github.com/Lancelot-SO)
 - Twitter: [@Felix Sowah](https://www.twitter.com/lancelot_han)
 - LinkedIn: [@Felix Sowah](https://www.linkedin.com/in/felix-sowah/)
 
 👤 **Ogaga Iyara**
 
--  GitHub: [@Ogaga Iyara](https://github.com/Ogaga01)
+- GitHub: [@Ogaga Iyara](https://github.com/Ogaga01)
 - Twitter: [@Ogaga Iyara](https://twitter.com/i_ogaga_n)
 - LinkedIn: [@Ogaga Iyara](https://www.linkedin.com/in/ogaga-iyara/)
 
@@ -196,7 +197,6 @@ to get random greetings from the frontend follow the follwing steps:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
-
 
 - [ ] **[Create Payment System]**
 
@@ -224,7 +224,7 @@ Give a ⭐️ if you like this project!.
 
 ## Acknowledgments
 
-- We are grateful to our families for the support they have given us during the development of this wonderful project. 
+- We are grateful to our families for the support they have given us during the development of this wonderful project.
 - We will like to thank the microverse community for their support.
 
 <a name="acknowledgements"></a>
