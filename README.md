@@ -58,7 +58,7 @@ After you're finished please remove all the comments and instructions!
 
 ### Frontend Repository
 
-- <a href="https://github.com/Lancelot-SO/carbnb-frontend.git">React(Vite) Link</a>
+- <a href="https://github.com/Lancelot-SO/carbnb-frontend.git">Frontend Repo Link</a>
 
 ## 🛠 Built With
 
