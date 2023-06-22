@@ -29,25 +29,24 @@ After you're finished please remove all the comments and instructions!
 
 # 📗 Table of Contents
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
+- [📗 Table of Contents](#-table-of-contents)
+- [](#)
+    - [Frontend Repository](#frontend-repository)
+  - [🛠 Built With](#-built-with)
     - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ (OPTIONAL)](#faq)
-- [📝 License](#license)
+    - [Key Features ](#key-features-)
+  - [💻 Getting Started ](#-getting-started-)
+    - [Prerequisites](#prerequisites)
+    - [Setup](#setup)
+    - [Frontend](#frontend)
+  - [👥 Authors ](#-authors-)
+  - [🔭 Future Features ](#-future-features-)
+  - [🤝 Contributing ](#-contributing-)
+  - [⭐️ Show your support ](#️-show-your-support-)
+  - [Acknowledgments](#acknowledgments)
+  - [KanBan Board](#kanban-board)
+  - [❓ FAQ (OPTIONAL) ](#-faq-optional-)
+  - [📝 License ](#-license-)
 
 <!-- PROJECT DESCRIPTION -->
 
@@ -228,6 +227,14 @@ Give a ⭐️ if you like this project!.
 - We will like to thank the microverse community for their support.
 
 <a name="acknowledgements"></a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- KanBan Board -->
+
+## KanBan Board
+- Link to [KanBan Board](https://github.com/users/Ogaga01/projects/2)
+- Link to [Initial KanBan State](https://github.com/Ogaga01/Car-BnB-API/issues/17)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
