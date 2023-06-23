@@ -68,6 +68,8 @@ After you're finished please remove all the comments and instructions!
   - [@Shakir Hussain](https://github.com/Shakir-Hussain12)
   - [@Ellon M](https://github.com/Ellon-M)
 
+- Link to [Initial KanBan State](https://github.com/Ogaga01/Car-BnB-API/issues/17)
+
 ![Image](https://github.com/Ogaga01/Car-BnB-API/assets/98261268/93ea828f-fe29-48fa-a368-a25a6240fba5)
 
 
