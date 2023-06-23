@@ -58,6 +58,19 @@ After you're finished please remove all the comments and instructions!
 
 - <a href="https://github.com/Lancelot-SO/carbnb-frontend.git">Frontend Repo Link</a>
 
+### KanBan Board
+
+- <a href="https://github.com/users/Ogaga01/projects/2">KanBan Board Link</a>
+
+- The Team has four members;
+  - [@Ogaga Iyara](https://github.com/Ogaga01)
+  - [@Felix Sowah](https://github.com/Lancelot-SO)
+  - [@Shakir Hussain](https://github.com/Shakir-Hussain12)
+  - [@Ellon M](https://github.com/Ellon-M)
+
+![Image](https://github.com/Ogaga01/Car-BnB-API/assets/98261268/93ea828f-fe29-48fa-a368-a25a6240fba5)
+
+
 ## 🛠 Built With
 
 - Ruby
